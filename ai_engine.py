@@ -4,10 +4,11 @@ def explain_bug(erroe_log:str) -> str:
 you are an AI Debugging Assistant. A User pasted this error log:
 {error_log}
 your task:
-1. explain the bug in simple in english.
-2.trace the cause-effect reasoning chian.
-3.suggest a logic-aware fix using static analysis.
-4.offer a teaching tip for new programmers.
+1.Pinpoint the exact line and variable where the error occurred.
+2. explain the bug in simple in english.
+3.show the corrected version of that line with reasoning.
+4.suggest a full fix if needed.
+5.offer a teaching tip for new programmers.
 respond clearly and concisely.
 """
   respones = openai.chatcompletion.create
@@ -18,4 +19,3 @@ respond clearly and concisely.
 
 )
 return response['choices'][0]['message']['content']
-  
